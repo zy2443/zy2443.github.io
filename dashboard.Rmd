@@ -1,0 +1,57 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
+library(dplyr)
+```
+
+```{r}
+data("instacart")
+
+instacart = 
+  instacart %>% 
+  as_tibble(instacart)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Total Number of Orders by Aisles
+
+```{r}
+instacart %>% 
+  count(aisle) %>%
+  filter(n > 10000) %>%
+  mutate(aisle = fct_reorder(aisle, n)) %>%
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Number of Orders by Day of the Week
+
+```{r}
+instacart %>%
+  count(order_dow) %>%
+  plot_ly(x = ~order_dow, y = ~n, type = "scatter", mode = "lines+markers")
+```
+
+### Order Sequence Number by Department 
+
+```{r}
+instacart %>% 
+  mutate(department = fct_reorder(department, order_number)) %>% 
+  plot_ly(y = ~order_number, color = ~department, type = "box", colors = "viridis")
+```
+
