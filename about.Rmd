@@ -1,0 +1,24 @@
+---
+title: "About Me"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# This page has my academic and professional experience
+
+Name: Zihan Yu
+
+Academic experience:
+
+Miami University(2015-2018): Mathematics
+
+Boston University(2018-2020): Business Analytics
+
+Columbia University(2020- ): Biostatistics
+
+
+
+
+

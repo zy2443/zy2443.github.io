@@ -1,0 +1,26 @@
+---
+title: "My Awesome Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# This is Zihan's awesome website
+
+Welcome to my website! Hi, I am Zihan Yu, a M.S student of biostatistics. I am from Hangzhou, China. During my free time, I like painting and playing computer games such as League of Legends.
+
+![](IL6A1445.jpeg)
+
+![](IL6A1491.jpeg)
+
+
+## Link to page within the site
+
+[About Me](about.html)
+
+
+## Other links
+[GitHub](https://github.com/zy2443)
+
+[Email](zy2443@cumc.columbia.edu)
